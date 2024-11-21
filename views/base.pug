@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      //- meta(http-equiv="Content-Security-Policy", content="connect-src 'self' ws://localhost:57797 blob: https://cdnjs.cloudflare.com")
+      meta(http-equiv= 'Content-Security-Policy' content="script-src 'self' https://cdnjs.cloudflare.com;")
+      //- meta(http-equiv="Content-Security-Policy", content="connect-src 'self' ws://localhost:57797 localhost:57797")
+      link(rel='stylesheet' href='/css/style.css')
+      link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      //- link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      title Natours | #{title}
+  
+  body
+    // HEADER
+    include _header
+        
+    // CONTENT
+    block content
+      h1 This is a placeholder heading
+      
+    // FOOTER
+    include _footer
+    
+
+    // WORKS  -> NOT GOOD PRACTICE -> actually in a bundler (parcel)   SKIP FOR NOW!
+    script(src='/js/mapbox.js')
+    script(type="module" src='/js/login.js')
